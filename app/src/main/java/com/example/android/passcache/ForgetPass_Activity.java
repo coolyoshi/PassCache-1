@@ -23,21 +23,22 @@ public class ForgetPass_Activity extends AppCompatActivity {
         setContentView(R.layout.activity_forget_pass_);
 
 
-        String receive = getIntent().getExtras().getString("sNumber2");
+        String receive = PrefUtilis.getFromPrefs(this, PrefUtilis.PREFS_LOGIN_QUESTION_KEY, "wtf");
+        System.out.println(receive);
      //   String test = PrefUtilis.getFromPrefs(this, PrefUtilis.PREFS_LOGIN_QUESTION_KEY, "wtf");
 
         String[] item =new String[1];
         item[0] = receive;
-        final Spinner dropdown = (Spinner)findViewById(R.id.spinner);
+        final TextView dropdown = (TextView)findViewById(R.id.spinner);
+        dropdown.setText(receive);
         String[] items = new String[]{"When is your birthday?","What is your Mother's maiden name?",
                 "What is your favorite food?","Where would you love to travel?"};
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, item);
-        dropdown.setAdapter(adapter);
+
 
         Button btnReset = (Button) findViewById(R.id.button3);
         btnReset.setOnClickListener(new View.OnClickListener() {
 
-                                        String Spinner =dropdown.getSelectedItem().toString();
 
                                         EditText editText = (EditText) findViewById(R.id.editText2);
                                         @Override
@@ -46,17 +47,17 @@ public class ForgetPass_Activity extends AppCompatActivity {
 
                                             String inputText = editText.getText().toString();
 
-                                            String sec = getIntent().getExtras().getString("sNumber");
+                                            String sec = PrefUtilis.getFromPrefs(ForgetPass_Activity.this, PrefUtilis.PREFS_LOGIN_SECURITY_KEY, "wtf");
 
-                                            if(inputText.equals("sec"))
+                                            if(inputText.equals(sec))
                                             {
                                                 TextView t = (TextView) findViewById(R.id.textView3);
-                                                t.setText("Password");
+                                                t.setText(PrefUtilis.getFromPrefs(ForgetPass_Activity.this, PrefUtilis.PREFS_LOGIN_PASSWORD_KEY, "wtf"));;
 
                                             }
                                             else{
                                                 TextView t = (TextView) findViewById(R.id.textView3);
-                                               t.setText("Answer is not correct,please try again");
+                                               t.setText("Answer is not correct, please try again.");
 
                                             }
                                         }

@@ -18,14 +18,13 @@
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true" />
 
-    <Spinner
+    <TextView
 
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/spinner"
         android:layout_below="@+id/textView"
         android:layout_alignParentStart="true" />
-        android:prompt = "@"
 
     <EditText
         android:layout_width="wrap_content"
@@ -60,8 +59,8 @@
         android:layout_height="wrap_content"
         android:text="Go To Log In Page"
         android:id="@+id/button4"
-        android:layout_alignTop="@+id/button3"
-        android:layout_alignEnd="@+id/spinner" />
+        android:layout_below="@+id/editText2"
+        android:layout_alignStart="@+id/textView3" />
 
     <TextView
         android:layout_width="wrap_content"

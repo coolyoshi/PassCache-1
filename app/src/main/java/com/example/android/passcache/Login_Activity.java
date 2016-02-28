@@ -41,8 +41,12 @@ public class Login_Activity extends AppCompatActivity {
     }
 
     public void buttonForget(View view) {
-        Intent intent = new Intent(Login_Activity.this, ForgetPass_Activity.class);
-        startActivity(intent);
+        try {
+            Intent intent = new Intent(Login_Activity.this, ForgetPass_Activity.class);
+            startActivity(intent);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     private void displayWrongPassDialog() {

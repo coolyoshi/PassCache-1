@@ -123,5 +123,16 @@
         android:layout_alignTop="@+id/btn8"
         android:layout_toStartOf="@+id/btn10" />
 
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="75dp"
+        android:id="@+id/btnAdd"
+        android:layout_row="0"
+        android:layout_column="2"
+        android:text="+"
+        android:layout_below="@+id/btn4"
+        android:layout_toEndOf="@+id/btn5"
+        android:layout_alignStart="@+id/btn4" />
+
 
 </RelativeLayout>
