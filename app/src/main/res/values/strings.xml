@@ -2,7 +2,10 @@
     <string name="app_name">PassCache</string>
 
     <string-array name = "Security_Questions" >
-        <item>What is your birthday?</item>
+        <item>When is your birthday?</item>
+        <item>What is your Mother\'s maiden name?</item>
+        <item>What is your favorite food?</item>
+        <item>Where would you love to travel?</item>
     </string-array>
 
 </resources>
