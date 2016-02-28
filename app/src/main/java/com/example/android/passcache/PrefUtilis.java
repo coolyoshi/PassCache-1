@@ -8,7 +8,6 @@ import android.content.Context;
  * Created by Chris on 2016-02-27.
  */
 public class PrefUtilis {
-    public static final String PREFS_LOGIN_USERNAME_KEY = "__USERNAME__" ;
     public static final String PREFS_LOGIN_PASSWORD_KEY = "__PASSWORD__" ;
 
     /**
