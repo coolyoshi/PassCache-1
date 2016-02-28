@@ -17,4 +17,9 @@ public class Login_Activity extends AppCompatActivity {
         Intent intent = new Intent(Login_Activity.this, Main.class);
         startActivity(intent);
     }
+
+    public void buttonForget(View view) {
+        Intent intent = new Intent(Login_Activity.this, ForgetPass_Activity.class);
+        startActivity(intent);
+    }
 }
