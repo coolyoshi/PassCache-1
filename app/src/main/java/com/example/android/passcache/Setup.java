@@ -36,6 +36,10 @@ public class Setup extends AppCompatActivity {
 
         /* Validates the user inputs if passwords are same and not empty, etc.
            Display error message if violation occurred */
+
+
+
+
         if (password.equals("")) {
             displayWrongPassDialog("Password cannot be empty!");
         } else if (!password.equals(passConfirm)) {
@@ -51,8 +55,21 @@ public class Setup extends AppCompatActivity {
             PrefUtilis.saveToPrefs(this, PrefUtilis.PREFS_LOGIN_QUESTION_KEY, securityQuestion);
             PrefUtilis.saveToPrefs(this, PrefUtilis.PREFS_LOGIN_FIRST_TIME_KEY, "something");
 
+
+
+            Intent i2 = new Intent(Setup.this, ForgetPass_Activity.class);
+            i2.putExtra("sNumber", securityAnswer);
+            startActivity(i2);
+
+
+            Intent i3 = new Intent(Setup.this, ForgetPass_Activity.class);
+            i3.putExtra("sNumber2", securityQuestion);
+            startActivity(i3);
+
             Intent i = new Intent(Setup.this, Login_Activity.class);
             startActivity(i);
+
+
         }
     }
 

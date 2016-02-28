@@ -11,6 +11,7 @@ import android.widget.TextView;
 import android.widget.ArrayAdapter;
 import android.widget.Toast;
 import android.widget.AdapterView;
+import android.content.DialogInterface;
 
 import java.util.HashMap;
 
@@ -21,14 +22,17 @@ public class ForgetPass_Activity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_forget_pass_);
 
+
+        String receive = getIntent().getExtras().getString("sNumber2");
+     //   String test = PrefUtilis.getFromPrefs(this, PrefUtilis.PREFS_LOGIN_QUESTION_KEY, "wtf");
+
+        String[] item =new String[1];
+        item[0] = receive;
         final Spinner dropdown = (Spinner)findViewById(R.id.spinner);
         String[] items = new String[]{"When is your birthday?","What is your Mother's maiden name?",
                 "What is your favorite food?","Where would you love to travel?"};
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, items);
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, item);
         dropdown.setAdapter(adapter);
-
-
-        HashMap <String,String>Password = new HashMap<String, String>();
 
         Button btnReset = (Button) findViewById(R.id.button3);
         btnReset.setOnClickListener(new View.OnClickListener() {
@@ -42,9 +46,9 @@ public class ForgetPass_Activity extends AppCompatActivity {
 
                                             String inputText = editText.getText().toString();
 
+                                            String sec = getIntent().getExtras().getString("sNumber");
 
-                                            String PassWord = "";
-                                            if(inputText.equals(PassWord))
+                                            if(inputText.equals("sec"))
                                             {
                                                 TextView t = (TextView) findViewById(R.id.textView3);
                                                 t.setText("Password");
