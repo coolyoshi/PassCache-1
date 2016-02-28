@@ -14,11 +14,7 @@ import android.widget.Button;
 import android.content.Intent;
 import android.view.View;
 import android.widget.TextView;
-
-
 import android.view.LayoutInflater;
-
-
 import android.widget.Toast;
 import android.view.LayoutInflater;
 import java.util.List;
