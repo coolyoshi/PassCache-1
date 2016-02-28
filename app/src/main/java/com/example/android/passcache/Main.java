@@ -36,11 +36,25 @@ public class Main extends AppCompatActivity {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        btns[0] = (Button) findViewById(R.id.btn1);
+        btns[1] = (Button) findViewById(R.id.btn2);
+        btns[2] = (Button) findViewById(R.id.btn3);
+        btns[3] = (Button) findViewById(R.id.btn4);
+        btns[4] = (Button) findViewById(R.id.btn5);
+        btns[5] = (Button) findViewById(R.id.btn6);
+        btns[6] = (Button) findViewById(R.id.btn7);
+        btns[7] = (Button) findViewById(R.id.btn8);
+        btns[8] = (Button) findViewById(R.id.btn9);
+        btns[9] = (Button) findViewById(R.id.btn10);
+
         circleList = new ArrayList<Circle>();
         circleList = PrefUtilis.getFromPrefs2(this, PrefUtilis.PREFS_CIRCLE_KEY, null);
 
         for (int i = 0; i<circleList.size(); i++){
-            //circle[i]
+            btns[i].setText ( circleList.get(i).getTitle() );
+            btns[i].setVisibility(View.VISIBLE);
+            cnt++;
         }
 
         // components from main.xml
@@ -74,16 +88,6 @@ public class Main extends AppCompatActivity {
                             toast.show();
 
                         } else {
-                            btns[0] = (Button) findViewById(R.id.btn1);
-                            btns[1] = (Button) findViewById(R.id.btn2);
-                            btns[2] = (Button) findViewById(R.id.btn3);
-                            btns[3] = (Button) findViewById(R.id.btn4);
-                            btns[4] = (Button) findViewById(R.id.btn5);
-                            btns[5] = (Button) findViewById(R.id.btn6);
-                            btns[6] = (Button) findViewById(R.id.btn7);
-                            btns[7] = (Button) findViewById(R.id.btn8);
-                            btns[8] = (Button) findViewById(R.id.btn9);
-                            btns[9] = (Button) findViewById(R.id.btn10);
                             //show the account
                             btns[cnt].setVisibility(View.VISIBLE);
 
