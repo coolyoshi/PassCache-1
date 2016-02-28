@@ -34,9 +34,6 @@ public class ForgetPass_Activity extends AppCompatActivity {
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, item);
         dropdown.setAdapter(adapter);
 
-
-        HashMap <String,String>Password = new HashMap<String, String>();
-
         Button btnReset = (Button) findViewById(R.id.button3);
         btnReset.setOnClickListener(new View.OnClickListener() {
 
