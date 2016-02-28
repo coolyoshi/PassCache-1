@@ -51,8 +51,7 @@ public class Main extends AppCompatActivity {
         btns[8] = (Button) findViewById(R.id.btn9);
         btns[9] = (Button) findViewById(R.id.btn10);
 
-        circleList = new ArrayList<Circle>();
-        circleList = PrefUtilis.getFromPrefs2(this, PrefUtilis.PREFS_CIRCLE_KEY, null);
+        circleList = PrefUtilis.getFromPrefs2(this, PrefUtilis.PREFS_CIRCLE_KEY, new ArrayList<Circle>());
 
         for (int i = 0; i<circleList.size(); i++){
             btns[i].setText ( circleList.get(i).getTitle() );

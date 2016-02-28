@@ -36,6 +36,12 @@ public class PrefUtilis {
         editor.commit();
     }
 
+    /**
+     * Saving the Circle objects
+     * @param context
+     * @param key
+     * @param circleList
+     */
     public static void saveToPrefs2(Context context, String key, List<Circle> circleList) {
         SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(context);
         final SharedPreferences.Editor editor = prefs.edit();
@@ -65,6 +71,13 @@ public class PrefUtilis {
         }
     }
 
+    /**
+     * Retrieve the list of circles
+     * @param context
+     * @param key
+     * @param defaultValue
+     * @return
+     */
     public static List<Circle> getFromPrefs2(Context context, String key, List<Circle> defaultValue) {
         SharedPreferences sharedPrefs = PreferenceManager.getDefaultSharedPreferences(context);
 
