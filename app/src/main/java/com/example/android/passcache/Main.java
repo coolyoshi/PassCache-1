@@ -30,6 +30,8 @@ public class Main extends AppCompatActivity {
     private EditText editTextMainScreen;
     final Context context = this;
     private List<Circle> circleList;
+    private int current;
+    private AlertDialog currentDialoge;
 
     //Button arrays to store the account information
     Button[] btns = new Button[10];
@@ -66,6 +68,7 @@ public class Main extends AppCompatActivity {
                 @Override
                 public void onClick(View v) {
                     // get prompts.xml view
+                    current = j;
                     LayoutInflater layoutInflater = LayoutInflater.from(context);
                     View promptView = layoutInflater.inflate(R.layout.display_info, null);
                     AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(context);
@@ -81,6 +84,7 @@ public class Main extends AppCompatActivity {
 
                     AlertDialog alertD = alertDialogBuilder.create();
                     alertD.show();
+                    currentDialoge = alertD;
                 }
             });
         }
@@ -145,6 +149,11 @@ public class Main extends AppCompatActivity {
                 alertD.show();
             }
         });
+    }
+
+    public void handleClick(View view) {
+        btns[current].setVisibility(View.INVISIBLE);
+        currentDialoge.cancel();
     }
 
     /*

@@ -95,5 +95,13 @@
         </TextView>
     </LinearLayout>
 
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Delete"
+        android:layout_marginTop="30sp"
+        android:layout_marginLeft="15sp"
+        android:onClick="handleClick" />
+
 
 </LinearLayout>
