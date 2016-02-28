@@ -62,6 +62,31 @@ public class Main extends AppCompatActivity {
             cnt++;
         }
 
+        for (int i = 0; i < btns.length; i++) {
+            final int j = i;
+            btns[i].setOnClickListener(new OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    // get prompts.xml view
+                    LayoutInflater layoutInflater = LayoutInflater.from(context);
+                    View promptView = layoutInflater.inflate(R.layout.display_info, null);
+                    AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(context);
+
+                    // set prompts.xml to be the layout file of the alertdialog builder
+                    alertDialogBuilder.setView(promptView);
+                    final TextView title3 = (TextView) promptView.findViewById(R.id.title_value);
+                    title3.setText(circleList.get(j).getTitle());
+                    final TextView title = (TextView) promptView.findViewById(R.id.username_value);
+                    title.setText(circleList.get(j).getUsername());
+                    final TextView title2 = (TextView) promptView.findViewById(R.id.password_value);
+                    title2.setText(circleList.get(j).getPassword());
+
+                    AlertDialog alertD = alertDialogBuilder.create();
+                    alertD.show();
+                }
+            });
+        }
+
         // components from main.xml
         button = (Button) findViewById(R.id.btnAdd);
         button.setOnClickListener(new OnClickListener() {
@@ -101,10 +126,10 @@ public class Main extends AppCompatActivity {
                             String usernameString = username.getText().toString();
                             String passwordString = password.getText().toString();
                             Circle newCircle = new Circle(titleString, usernameString, passwordString);
+                            newCircle.setTitle(titleString);
                             circleList.add(newCircle);
                             // saveToPref2 for saving circles info
                             PrefUtilis.saveToPrefs2(context, PrefUtilis.PREFS_CIRCLE_KEY, circleList);
-
                             btns[cnt].setText(titleString);
                             cnt++;
                         }
