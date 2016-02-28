@@ -16,6 +16,7 @@
         android:background="@drawable/round_button"
         android:gravity="center_vertical|center_horizontal"
         android:text="hello"
-        android:textColor="#fff" />
+        android:textColor="#fff"
+        android:id="@+id/button3" />
 
 </RelativeLayout>
