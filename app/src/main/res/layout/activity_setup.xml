@@ -9,4 +9,10 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.example.android.passcache.Setup">
 
+    <Spinner
+        android:id="@+id/sp_Question"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:entries="@array/Security_Questions"> </Spinner>
+
 </RelativeLayout>
