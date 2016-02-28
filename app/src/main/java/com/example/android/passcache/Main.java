@@ -38,6 +38,10 @@ public class Main extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         circleList = new ArrayList<Circle>();
         circleList = PrefUtilis.getFromPrefs2(this, PrefUtilis.PREFS_CIRCLE_KEY, null);
+        
+        for (int i = 0; i<circleList.size(); i++){
+            //circle[i]
+        }
 
         // components from main.xml
         button = (Button) findViewById(R.id.btnAdd);
@@ -82,6 +86,17 @@ public class Main extends AppCompatActivity {
                             btns[9] = (Button) findViewById(R.id.btn10);
                             //show the account
                             btns[cnt].setVisibility(View.VISIBLE);
+
+                            //Create a new Circle object
+                            String titleString = title.getText().toString();
+                            String usernameString = username.getText().toString();
+                            String passwordString = password.getText().toString();
+                            Circle newCircle = new Circle(titleString, usernameString, passwordString);
+                            circleList.add(newCircle);
+                            // saveToPref2 for saving circles info
+                            PrefUtilis.saveToPrefs2(context, PrefUtilis.PREFS_CIRCLE_KEY, circleList);
+
+                            btns[cnt].setText(titleString);
                             cnt++;
                         }
 
