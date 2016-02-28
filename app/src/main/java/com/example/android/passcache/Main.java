@@ -9,17 +9,23 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View.OnClickListener;
 import android.os.Bundle;
 
-import android.view.LayoutInflater;
-
 import android.view.View;
 import android.widget.Button;
+import android.content.Intent;
+import android.view.View;
 import android.widget.TextView;
+
+
+import android.view.LayoutInflater;
+
+
 import android.widget.Toast;
 import android.view.LayoutInflater;
 import java.util.List;
 import java.util.ArrayList;
 import android.util.Log;
 import android.widget.EditText;
+
 
 public class Main extends AppCompatActivity {
 
@@ -136,4 +142,8 @@ public class Main extends AppCompatActivity {
         getList = PrefUtilis.getFromPrefs2(this, PrefUtilis.PREFS_CIRCLE_KEY, null);
         Log.d("TAG", "FINAL_TEST... EXPECT: 'Pass_Test2', RESULT: " + getList.get(1).getPassword().toString());
     }
+
+
+
+
 }
