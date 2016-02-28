@@ -14,11 +14,7 @@ import android.widget.Button;
 import android.content.Intent;
 import android.view.View;
 import android.widget.TextView;
-
-
 import android.view.LayoutInflater;
-
-
 import android.widget.Toast;
 import android.view.LayoutInflater;
 import java.util.List;
@@ -34,6 +30,7 @@ public class Main extends AppCompatActivity {
     final Context context = this;
     private List<Circle> circleList;
 
+    //Button arrays to store the account information
     Button[] btns = new Button[10];
     int[] idx = new int[10];
     int cnt = 0;
