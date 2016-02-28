@@ -16,6 +16,14 @@ public class Login_Activity extends AppCompatActivity {
         setContentView(R.layout.login_activity);
     }
 
+//    @Override
+//    /**
+//     * Deactivate backwards button
+//     */
+//    public void onBackPressed() {
+//        // do nothing
+//    }
+
     public void buttonLoginClick(View view) {
         //String test = PrefUtilis.getFromPrefs(this, PrefUtilis.PREFS_LOGIN_PASSWORD_KEY, "wtf");
         String password = ((EditText) findViewById(R.id.password)).getText().toString();

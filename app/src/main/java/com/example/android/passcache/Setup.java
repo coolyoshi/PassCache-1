@@ -1,5 +1,7 @@
 package com.example.android.passcache;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -35,18 +37,14 @@ public class Setup extends AppCompatActivity {
         /* Validates the user inputs if passwords are same and not empty, etc.
            Display error message if violation occurred */
         if (password.equals("")) {
-            ((TextView) findViewById(R.id.error_message)).setText("Password cannot be empty!");
-        }
-        else if (!password.equals(passConfirm)) {
-            ((TextView) findViewById(R.id.error_message)).setText("Passwords don\'t match!");
-        }
-        else if (securityAnswer.equals("")){
-            ((TextView) findViewById(R.id.error_message)).setText("Security answer cannot be empty!");
-        }
-        else if (password.length() < 4){
-            ((TextView) findViewById(R.id.error_message)).setText("Password is too short!");
-        }
-        else {
+            displayWrongPassDialog("Password cannot be empty!");
+        } else if (!password.equals(passConfirm)) {
+            displayWrongPassDialog("Passwords don\'t match!");
+        } else if (securityAnswer.equals("")) {
+            displayWrongPassDialog("Security answer cannot be empty!");
+        } else if (password.length() < 4) {
+            displayWrongPassDialog("Password is too short!");
+        } else {
             /* Save the password and security answer */
             PrefUtilis.saveToPrefs(this, PrefUtilis.PREFS_LOGIN_PASSWORD_KEY, password);
             PrefUtilis.saveToPrefs(this, PrefUtilis.PREFS_LOGIN_SECURITY_KEY, securityAnswer);
@@ -57,4 +55,22 @@ public class Setup extends AppCompatActivity {
             startActivity(i);
         }
     }
+
+    /**
+     * Display error message box
+     * @param message
+     */
+    private void displayWrongPassDialog(String message) {
+        AlertDialog alertDialog = new AlertDialog.Builder(this).create();
+        alertDialog.setTitle("Error registering");
+        alertDialog.setMessage(message);
+        alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, "OK",
+                new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.dismiss();
+                    }
+                });
+        alertDialog.show();
+    }
+
 }
