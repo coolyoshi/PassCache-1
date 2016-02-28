@@ -2,6 +2,8 @@ package com.example.android.passcache;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 
 public class Main extends AppCompatActivity {
 
@@ -10,4 +12,11 @@ public class Main extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
     }
+
+    public void onClick(View v){
+
+    }
+
+
+
 }

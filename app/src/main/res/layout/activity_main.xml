@@ -11,11 +11,13 @@
 
 
     <Button
+        android:id="@+id/button"
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:background="@drawable/round_button"
         android:gravity="center_vertical|center_horizontal"
         android:text="hello"
-        android:textColor="#fff" />
+        android:textColor="#fff"
+        android:onClick="onClick"/>
 
 </RelativeLayout>
