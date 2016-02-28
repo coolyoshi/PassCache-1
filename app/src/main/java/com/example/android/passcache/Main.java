@@ -58,7 +58,6 @@ public class Main extends AppCompatActivity {
 
         for (int i = 0; i<circleList.size(); i++){
             btns[i].setText ( circleList.get(i).getTitle() );
-            btns[i].setVisibility(View.VISIBLE);
             cnt++;
         }
 

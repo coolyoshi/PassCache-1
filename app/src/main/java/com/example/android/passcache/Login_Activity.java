@@ -35,6 +35,7 @@ public class Login_Activity extends AppCompatActivity {
             else {
                 displayWrongPassDialog();
             }
+            ((EditText) findViewById(R.id.password)).setText("");
         } catch (Exception e) {
             e.printStackTrace();
         }
