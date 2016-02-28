@@ -56,6 +56,8 @@ public class Main extends AppCompatActivity {
                 alertDialogBuilder.setCancelable(false).setPositiveButton("CONFIRM", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
 
+                        //Sends a toast message when there have been 10 accounts
+                        //in the system
                         if (cnt >= 10) {
                             Context context = getApplicationContext();
                             CharSequence text = "Error! System cannot hold anymore accounts";
@@ -63,6 +65,7 @@ public class Main extends AppCompatActivity {
 
                             Toast toast = Toast.makeText(context, text, duration);
                             toast.show();
+
                         } else {
                             btns[0] = (Button) findViewById(R.id.btn1);
                             btns[1] = (Button) findViewById(R.id.btn2);
@@ -74,7 +77,7 @@ public class Main extends AppCompatActivity {
                             btns[7] = (Button) findViewById(R.id.btn8);
                             btns[8] = (Button) findViewById(R.id.btn9);
                             btns[9] = (Button) findViewById(R.id.btn10);
-
+                            //show the account
                             btns[cnt].setVisibility(View.VISIBLE);
                             cnt++;
                         }
@@ -92,34 +95,6 @@ public class Main extends AppCompatActivity {
                 alertD.show();
             }
         });
-    }
-
-
-    public void Add(View v) {
-
-        //when play is clicked show stop button and hide play button
-        if (cnt >= 10) {
-            Context context = getApplicationContext();
-            CharSequence text = "Error! System cannot hold anymore accounts";
-            int duration = Toast.LENGTH_SHORT;
-
-            Toast toast = Toast.makeText(context, text, duration);
-            toast.show();
-        } else {
-            btns[0] = (Button) findViewById(R.id.btn1);
-            btns[1] = (Button) findViewById(R.id.btn2);
-            btns[2] = (Button) findViewById(R.id.btn3);
-            btns[3] = (Button) findViewById(R.id.btn4);
-            btns[4] = (Button) findViewById(R.id.btn5);
-            btns[5] = (Button) findViewById(R.id.btn6);
-            btns[6] = (Button) findViewById(R.id.btn7);
-            btns[7] = (Button) findViewById(R.id.btn8);
-            btns[8] = (Button) findViewById(R.id.btn9);
-            btns[9] = (Button) findViewById(R.id.btn10);
-
-            btns[cnt].setVisibility(View.VISIBLE);
-            cnt++;
-        }
     }
 
     /*
