@@ -99,4 +99,14 @@
         android:layout_alignParentEnd="true"
         android:onClick="onClick" />
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:textColor="#D32F2F"
+        android:id="@+id/error_message"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="43dp" />
+
 </RelativeLayout>

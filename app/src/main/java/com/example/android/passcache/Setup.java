@@ -3,6 +3,9 @@ package com.example.android.passcache;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextView;
 
 public class Setup extends AppCompatActivity {
 
@@ -12,7 +15,22 @@ public class Setup extends AppCompatActivity {
         setContentView(R.layout.activity_setup);
     }
 
+    /**
+     *
+     * @param v
+     */
     public void onClick(View v) {
-        //findViewById(R.id.enter_password).
+        String password = ((EditText) findViewById(R.id.enter_password)).getText().toString();
+        String passConfirm = ((EditText) findViewById(R.id.confirm_password)).getText().toString();
+        String securityAnswer = ((EditText) findViewById(R.id.security_answer)).getText().toString();
+
+        if (!password.equals(passConfirm)) {
+            ((TextView) findViewById(R.id.error_message)).setText("Passwords don\'t match!");
+        } else if (password.equals("")) {
+            ((TextView) findViewById(R.id.error_message)).setText("Password cannot be empty!");
+        }
+        else if (securityAnswer.equals("")){
+            ((TextView) findViewById(R.id.error_message)).setText("Security answer cannot be empty!");
+        }
     }
 }
