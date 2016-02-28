@@ -28,6 +28,7 @@ public class Main extends AppCompatActivity {
     final Context context = this;
     private List<Circle> circleList;
 
+    //Button arrays to store the account information
     Button[] btns = new Button[10];
     int[] idx = new int[10];
     int cnt = 0;
@@ -56,6 +57,8 @@ public class Main extends AppCompatActivity {
             btns[i].setVisibility(View.VISIBLE);
             cnt++;
         }
+
+
 
         // components from main.xml
         button = (Button) findViewById(R.id.btnAdd);
