@@ -11,6 +11,7 @@ public class Circle {
     String username = "";
     String password = "";
     int[] colorRGB = {0,0,0};
+    boolean isVisible = true;
 
     /**
      * Constructor
@@ -69,6 +70,14 @@ public class Circle {
      */
     public void setPassword(){
         this.password = password;
+    }
+
+    public void setVisible(boolean b) {
+        isVisible = b;
+    }
+
+    public boolean isVisible() {
+        return isVisible;
     }
 
     /**

@@ -7,6 +7,8 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
+import android.view.DragEvent;
+import android.view.MotionEvent;
 import android.view.View.OnClickListener;
 import android.os.Bundle;
 
@@ -14,6 +16,7 @@ import android.view.View;
 import android.widget.Button;
 import android.content.Intent;
 import android.view.View;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.view.LayoutInflater;
 import android.widget.Toast;
@@ -38,6 +41,15 @@ public class Main extends AppCompatActivity {
     int[] idx = new int[10];
     int cnt = 0;
 
+    @Override
+    /**
+     * Deactivate backwards button
+     */
+    public void onBackPressed() {
+        PrefUtilis.saveToPrefs2(this, PrefUtilis.PREFS_CIRCLE_KEY, circleList);
+        super.onBackPressed();
+    }
+
     public void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
@@ -54,10 +66,19 @@ public class Main extends AppCompatActivity {
         btns[8] = (Button) findViewById(R.id.btn9);
         btns[9] = (Button) findViewById(R.id.btn10);
 
+
         circleList = PrefUtilis.getFromPrefs2(this, PrefUtilis.PREFS_CIRCLE_KEY, new ArrayList<Circle>());
 
+        for (int i = 0; i < circleList.size(); i++) {
+            if (circleList.get(i).isVisible) {
+                btns[i].setVisibility(View.VISIBLE);
+            } else {
+                btns[i].setVisibility(View.INVISIBLE);
+            }
+        }
+
         for (int i = 0; i<circleList.size(); i++){
-            btns[i].setText ( circleList.get(i).getTitle() );
+            btns[i].setText(circleList.get(i).getTitle());
             cnt++;
         }
 
@@ -90,6 +111,7 @@ public class Main extends AppCompatActivity {
 
         // components from main.xml
         button = (Button) findViewById(R.id.btnAdd);
+
         button.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -132,6 +154,7 @@ public class Main extends AppCompatActivity {
                             // saveToPref2 for saving circles info
                             PrefUtilis.saveToPrefs2(context, PrefUtilis.PREFS_CIRCLE_KEY, circleList);
                             btns[cnt].setText(titleString);
+                            circleList.get(cnt).setVisible(true);
                             cnt++;
                         }
 
@@ -153,6 +176,7 @@ public class Main extends AppCompatActivity {
     public void handleClick(View view) {
         btns[current].setVisibility(View.INVISIBLE);
         currentDialoge.cancel();
+        circleList.get(current).setVisible(false);
     }
 
     /*
