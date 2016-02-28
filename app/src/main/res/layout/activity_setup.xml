@@ -3,16 +3,100 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.example.android.passcache.Setup">
+
+    <TextView
+        android:id="@+id/title_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Enter Password:"
+        android:layout_marginTop="15sp"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/enter_password"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textStyle="italic"
+        android:textColor="#9E9E9E"
+        android:inputType="textMultiLine"
+        android:layout_below="@+id/title_text_view"
+        android:layout_alignStart="@+id/title_text_view"/>
+
+    <TextView
+        android:id="@+id/confirm_message"
+        android:text="Confirm Password"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15sp"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:layout_below="@+id/enter_password"
+        android:layout_alignStart="@+id/enter_password" />
+
+    <EditText
+        android:id="@+id/confirm_password"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textStyle="italic"
+        android:textColor="#9E9E9E"
+        android:inputType="textMultiLine"
+        android:layout_below="@+id/confirm_message"
+        android:layout_alignStart="@+id/confirm_message" />
+
+    <TextView
+        android:id="@+id/security_question_message"
+        android:text="Please choose a security question"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15sp"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:layout_below="@id/confirm_password"
+        android:layout_alignParentStart="true" />
 
     <Spinner
         android:id="@+id/sp_Question"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:entries="@array/Security_Questions"
+        android:layout_below="@+id/security_question_message"
+        android:layout_alignStart="@+id/security_question_message">
+    </Spinner>
+
+    <TextView
+        android:id="@+id/answer_hint"
+        android:text="Answer:"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15sp"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:layout_below="@id/sp_Question" />
+
+    <EditText
+        android:id="@+id/security_answer"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:entries="@array/Security_Questions"> </Spinner>
+        android:textStyle="italic"
+        android:textColor="#9E9E9E"
+        android:layout_marginTop="15sp"
+        android:layout_marginLeft="20sp"
+        android:inputType="textMultiLine"
+        android:layout_below="@+id/sp_Question"
+        android:layout_toRightOf="@+id/answer_hint" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Submit"
+        android:id="@+id/button"
+        android:layout_marginTop="61dp"
+        android:layout_marginRight="30sp"
+        android:layout_below="@+id/security_answer"
+        android:layout_alignParentEnd="true"
+        android:onClick="onClick" />
 
 </RelativeLayout>
