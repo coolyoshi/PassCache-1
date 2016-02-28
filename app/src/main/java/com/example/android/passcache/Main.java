@@ -38,7 +38,7 @@ public class Main extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         circleList = new ArrayList<Circle>();
         circleList = PrefUtilis.getFromPrefs2(this, PrefUtilis.PREFS_CIRCLE_KEY, null);
-        
+
         for (int i = 0; i<circleList.size(); i++){
             //circle[i]
         }
