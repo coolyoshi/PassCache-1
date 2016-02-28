@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">PassCache</string>
 
-    <string-array name = "Security_Questions" >
+    <string-array name="Security_Questions">
         <item>What is your birthday?</item>
     </string-array>
 
