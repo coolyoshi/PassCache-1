@@ -9,6 +9,9 @@ import android.content.Context;
  */
 public class PrefUtilis {
     public static final String PREFS_LOGIN_PASSWORD_KEY = "__PASSWORD__" ;
+    public static final String PREFS_LOGIN_SECURITY_KEY = "__SECURITY__" ;
+    public static final String PREFS_LOGIN_QUESTION_KEY = "__QUESTION__" ;
+    public static final String PREFS_LOGIN_FIRST_TIME_KEY = "__FIRST__" ;
 
     /**
      * Called to save supplied value in shared preferences against given key.
