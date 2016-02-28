@@ -20,4 +20,10 @@
         android:textColor="#fff"
         android:onClick="onClick"/>
 
+    <EditText
+        android:id="@+id/editTextResult"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/button" />
+
 </RelativeLayout>
