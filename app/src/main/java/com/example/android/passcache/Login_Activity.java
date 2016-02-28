@@ -26,13 +26,17 @@ public class Login_Activity extends AppCompatActivity {
 
     public void buttonLoginClick(View view) {
         //String test = PrefUtilis.getFromPrefs(this, PrefUtilis.PREFS_LOGIN_PASSWORD_KEY, "wtf");
-        String password = ((EditText) findViewById(R.id.password)).getText().toString();
-        if( password.equals(PrefUtilis.getFromPrefs(this, PrefUtilis.PREFS_LOGIN_PASSWORD_KEY, "wtf")) ) {
-            Intent intent = new Intent(Login_Activity.this, Main.class);
-            startActivity(intent);
-        }
-        else {
-            displayWrongPassDialog();
+        try {
+            String password = ((EditText) findViewById(R.id.password)).getText().toString();
+            if( password.equals(PrefUtilis.getFromPrefs(this, PrefUtilis.PREFS_LOGIN_PASSWORD_KEY, "wtf")) ) {
+                Intent intent = new Intent(Login_Activity.this, Main.class);
+                startActivity(intent);
+            }
+            else {
+                displayWrongPassDialog();
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
         }
     }
 
