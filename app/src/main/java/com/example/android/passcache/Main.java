@@ -6,11 +6,8 @@ import android.content.DialogInterface;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View.OnClickListener;
 import android.os.Bundle;
-<<<<<<< HEAD
 import android.view.LayoutInflater;
-=======
 
->>>>>>> c5f5c518d24017b3cbce6734eda500d07daffa1e
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
